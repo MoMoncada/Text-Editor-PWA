@@ -4,7 +4,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
-- [Application-overview](#application-overview)
+- [Application Overview](#application-overview)
 - [Insomnia Routes](#insomnia-routes)
 - [Application Documentation](#application-documentation)
 
@@ -30,7 +30,7 @@ Using Insomnia, users can test the API and successfully create, update, and dele
 ```
 
 ## Application Overview
-![text-editr]()
+![text-editr](./assets/overview.png)
 
 
 

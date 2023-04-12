@@ -25,9 +25,9 @@ module.exports = () => {
         title: 'JATE'
       }),
       //-- Service Worker --//
-      new InjectManifest ({
+      new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'src-sw.js'
+        swDest: 'src-sw.js',
       }),
       //-- manifest.json file --//
       new WebpackPwaManifest({
@@ -35,7 +35,7 @@ module.exports = () => {
         inject: true,
         name: 'Just Another Text Editor',
         short_name: 'JATE',
-        description: 'Text Editor',
+        description: 'Just another text editor',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: '/',
@@ -44,10 +44,11 @@ module.exports = () => {
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets','icons')
-          }
-        ]
-      })
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
+
     ],
 
     module: {
@@ -60,15 +61,15 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
-          //-- To use ES6 --//
+          // We use babel-loader in order to use ES6.
           use: {
+            loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
               plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
-        
       ],
     },
   };
